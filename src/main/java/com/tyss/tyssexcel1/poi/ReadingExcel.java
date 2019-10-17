@@ -16,32 +16,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ReadingExcel {
-	public static final String SAMPLE_XLSX_FILE_PATH = "J:\\Java.xlsx";
+	// public static final String SAMPLE_XLSX_FILE_PATH = "/Dummy.xlsx";
 
-	public Sheet getExcelData() throws EncryptedDocumentException, InvalidFormatException, IOException {
+	public Sheet getExcelData(String path) throws EncryptedDocumentException, InvalidFormatException, IOException {
 		// Creating a Workbook from an Excel file (.xls or .xlsx)
-		Workbook workbook = WorkbookFactory.create(new File(SAMPLE_XLSX_FILE_PATH));
+		Workbook workbook = WorkbookFactory.create(new File(path));
 
-		// Retrieving the number of sheets in the Workbook
-		System.out.println("Workbook has " + workbook.getNumberOfSheets() + " Sheets : ");
-		
-
-		/*
-		 * ============================================================= Iterating over
-		 * all the sheets in the workbook (Multiple ways)
-		 * =============================================================
-		 */
-
-		// 1. You can obtain a sheetIterator and iterate over it
-		Iterator<Sheet> sheetIterator = workbook.sheetIterator();
-		System.out.println("Retrieving Sheets using Iterator");
-		while (sheetIterator.hasNext()) {
-			Sheet sheet = sheetIterator.next();
-			System.out.println("=> " + sheet.getSheetName());
-		}
 		// Getting the Sheet at index zero
 		Sheet sheet = workbook.getSheetAt(0);
-			return sheet;
+		return sheet;
 	}
 
 }

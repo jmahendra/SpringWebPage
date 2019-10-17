@@ -18,6 +18,15 @@
 <body style="background: #3b5998">
 	<%!int i;%>
 	<div class="container">
+		<h2 style="color:white">
+			<marquee>don't switch from one tab to other while giving test</marquee>
+		</h2>
+		<div class="jumbotron">
+			<h2>Welcome to online Java test</h2>
+			<button type="submit" class="btn btn-outline-danger float-right">Start
+				now</button>
+		</div>
+
 		<div class="col-md-8 offset-2">
 			<table class="table table-hover table-striped">
 
